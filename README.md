@@ -1,3 +1,11 @@
+# Portfolio v2 (test / future iteration)
+
+This is the experimental copy. The live site is `chaekim96/chaekim-portfolio`. This repo tracks the `portfolio-v2` branch there, plus a noindex so it never competes with production in search.
+
+Sync: from the main repo, `git push v2 portfolio-v2:main --force-with-lease` (remote `v2`), then re-apply the noindex commit if needed.
+
+---
+
 # chaekim.dev — personal portfolio
 
 Static site for Chae Kim: MBA candidate at UC Berkeley Haas, ex-EY AI & Data consultant, IU Informatics.
