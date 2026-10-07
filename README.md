@@ -1,3 +1,5 @@
+> **⚠️ Experimental.** This repo is a test bed for portfolio redesigns. The live site is [chaekim-portfolio](https://github.com/chaekim96/chaekim-portfolio) at [chaekim.vercel.app](https://chaekim.vercel.app).
+
 # Portfolio v2 (test / future iteration)
 
 This is the experimental copy. The live site is `chaekim96/chaekim-portfolio`. This repo tracks the `portfolio-v2` branch there, plus a noindex so it never competes with production in search.
