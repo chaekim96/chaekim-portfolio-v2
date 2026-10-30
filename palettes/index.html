@@ -3,76 +3,115 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Palette trials · Chae Kim - Portfolio</title>
+  <title>Palette trial · Chae Kim - Portfolio</title>
   <meta name="robots" content="noindex">
-  <meta name="description" content="Three color combinations for the portfolio, one accent each, with liquid glass.">
+  <meta name="description" content="Sky blue and white across the whole site: three levels of blue and six accents to choose from.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
   <style>
-    :root { --ink: #161618; --ink-2: #5d5d63; --line: rgba(0,0,0,.09); --bg: #f6f6f4; }
-    @media (prefers-color-scheme: dark) { :root { --ink: #f5f5f7; --ink-2: #a1a1a6; --line: rgba(255,255,255,.12); --bg: #0d0d0f; } }
+    :root { --ink: #0d1b2e; --ink-2: #44566e; --line: rgba(20,70,130,.14); --bg: #eef7fe; }
     * { box-sizing: border-box; }
-    body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.55 Poppins, system-ui, sans-serif; }
-    .wrap { width: min(100% - 32px, 1240px); margin: 0 auto; padding: 56px 0 80px; }
-    h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 600; letter-spacing: -.02em; margin: 0; }
-    .lede { color: var(--ink-2); max-width: 720px; margin: 10px 0 0; }
-    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 40px; }
-    @media (max-width: 960px) { .grid { grid-template-columns: 1fr; } }
-    .opt { display: flex; flex-direction: column; gap: 14px; min-width: 0; color: inherit; text-decoration: none; }
-    .shot { border-radius: 18px; overflow: hidden; box-shadow: 0 0 0 1px var(--line), 0 20px 50px -24px rgba(0,0,0,.35); transition: transform .25s cubic-bezier(.32,.72,0,1); }
+    body { margin: 0; color: var(--ink); font: 400 16px/1.55 Poppins, system-ui, sans-serif;
+      background: var(--bg) linear-gradient(180deg, #74bff0 0%, #a8d7f7 240px, #d6ecfc 600px, #eef7fe 1000px) no-repeat; }
+    .wrap { width: min(100% - 32px, 1240px); margin: 0 auto; padding: 48px 0 80px; }
+    a { color: inherit; }
+    .back { color: var(--ink-2); font-size: 14px; text-decoration: none; }
+    h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 600; letter-spacing: -.02em; margin: 18px 0 0; }
+    h2 { font-size: 22px; font-weight: 600; letter-spacing: -.01em; margin: 56px 0 6px; }
+    h3 { font-size: 17px; font-weight: 600; margin: 0; }
+    .lede, .sub { color: var(--ink-2); max-width: 760px; margin: 10px 0 0; }
+    .sub { margin-top: 0; }
+    .grid { display: grid; gap: 22px; margin-top: 22px; }
+    .g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    @media (max-width: 960px) { .g3 { grid-template-columns: 1fr; } }
+    .opt { display: flex; flex-direction: column; gap: 10px; min-width: 0; text-decoration: none; }
+    .shot { border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 18px 44px -24px rgba(20,60,110,.45); transition: transform .25s cubic-bezier(.32,.72,0,1); }
     .opt:hover .shot { transform: translateY(-3px); }
     .shot img { display: block; width: 100%; height: auto; }
-    .sw { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-    .sw span { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; color: var(--ink-2); }
-    .sw b { width: 18px; height: 18px; border-radius: 50%; box-shadow: 0 0 0 1px var(--line); }
-    .sw .acc { font-weight: 500; color: var(--ink); }
-    h2 { font-size: 20px; font-weight: 600; margin: 0; letter-spacing: -.01em; }
     .opt p { margin: 0; color: var(--ink-2); font-size: 15px; }
-    .go { font-weight: 500; font-size: 15px; }
-    .notes { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; font-size: 15px; }
-    @media (max-width: 960px) { .notes { grid-template-columns: 1fr; } }
-    .notes b { display: block; margin-bottom: 4px; }
-    .notes p { margin: 0; color: var(--ink-2); }
-    .back { color: var(--ink-2); font-size: 14px; }
+    .tag { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; }
+    .tag b { width: 14px; height: 14px; border-radius: 50%; box-shadow: 0 0 0 1px var(--line); }
+    .rec { display: inline-block; margin-left: 6px; padding: 2px 8px; border-radius: 999px; background: #0d1b2e; color: #fff; font-size: 11px; font-weight: 500; vertical-align: 2px; }
+    .pairs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 22px; }
+    @media (max-width: 960px) { .pairs { grid-template-columns: 1fr; } }
+    .pair { display: block; padding: 18px 20px; border-radius: 18px; background: rgba(255,255,255,.7); box-shadow: 0 0 0 1px var(--line); text-decoration: none; }
+    .pair:hover { background: #fff; }
+    .pair p { margin: 6px 0 0; color: var(--ink-2); font-size: 14px; }
+    .pair .tag { margin-top: 10px; }
+    .note { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 14px; max-width: 820px; }
   </style>
 </head>
 <body>
   <main class="wrap">
-    <a class="back" href="/">← Current site</a>
-    <h1 style="margin-top:18px">Three palettes, one accent each</h1>
-    <p class="lede">Each option is the real homepage, recolored, with liquid glass on the tab bar, the build labels, the Try it live buttons and the palette switcher. Open one, scroll, and watch the work bend at the edges of the glass as it passes under the tabs.</p>
+    <a class="back" href="/">← Back to the site</a>
+    <h1>Sky blue and white, across the whole site</h1>
+    <p class="lede">Option 1 now runs on every page of this test site: home, every case study, writing and reading. A glass bar at the bottom of each page sets how much blue and which accent. Your pick follows you from page to page, so browse around with it on.</p>
 
-    <div class="grid">
-      <a class="opt" href="/palettes/sky">
-        <div class="shot"><img src="/assets/img/palettes/sky.jpg" alt="The homepage in sky blue and white with hot pink tabs and glass labels" width="1280" height="860"></div>
-        <div class="sw"><span><b style="background:#74bff0"></b>Sky blue</span><span><b style="background:#fff"></b>White</span><span class="acc"><b style="background:#ff2e8a"></b>Hot pink, accent</span></div>
-        <h2>1 · Sky, white, hot pink</h2>
-        <p>Light and bright. A sky that fades to white, frosted white glass, and hot pink only where you can click: the active tab, live dots, the selection.</p>
-        <span class="go">Open option 1 →</span>
+    <h2>How much blue</h2>
+    <p class="sub">All three keep white type surfaces and navy text. Shown with hot pink.</p>
+    <div class="grid g3">
+      <a class="opt" href="/?blue=wash&amp;accent=pink">
+        <div class="shot"><img src="/assets/img/palettes/blue-wash.jpg" alt="Wash: a sky gradient that stays pale blue all the way down the page" width="1280" height="860" loading="lazy"></div>
+        <h3>Wash</h3>
+        <p>The sky fades to a pale blue that carries down every page, instead of to white. Cards keep their own soft tints. The lightest touch.</p>
       </a>
-      <a class="opt" href="/palettes/midnight">
-        <div class="shot"><img src="/assets/img/palettes/midnight.jpg" alt="The homepage in midnight black with an electric blue glow and cantaloupe orange tabs" width="1280" height="860"></div>
-        <div class="sw"><span><b style="background:#07080c"></b>Midnight</span><span><b style="background:#2f6bff"></b>Electric blue</span><span class="acc"><b style="background:#ffa25f"></b>Cantaloupe, accent</span></div>
-        <h2>2 · Midnight, electric blue, cantaloupe</h2>
-        <p>Dark and cinematic. Electric blue is the light source, a glow overhead and on the glass rims, so cantaloupe stays the one color that means "press here".</p>
-        <span class="go">Open option 2 →</span>
+      <a class="opt" href="/?blue=surfaces&amp;accent=pink">
+        <div class="shot"><img src="/assets/img/palettes/blue-surfaces.jpg" alt="Surfaces: a stronger sky, with every card and panel tinted blue" width="1280" height="860" loading="lazy"></div>
+        <h3>Surfaces <span class="rec">Suggested</span></h3>
+        <p>A deeper sky, and every card, result box and design note turns a light blue. Blue is the whole site's material, while the work still sits on calm, even tiles.</p>
       </a>
-      <a class="opt" href="/palettes/deep">
-        <div class="shot"><img src="/assets/img/palettes/deep.jpg" alt="The homepage in deep blue with white type and bubble gum pink tabs" width="1280" height="860"></div>
-        <div class="sw"><span><b style="background:#0b2a86"></b>Deep blue</span><span><b style="background:#fff"></b>Pure white</span><span class="acc"><b style="background:#ff8fcf"></b>Bubble gum, accent</span></div>
-        <h2>3 · Deep blue, white, bubble gum</h2>
-        <p>Rich and playful. A saturated blue page with pure white type, blue-tinted glass, and bubble gum pink as the accent.</p>
-        <span class="go">Open option 3 →</span>
+      <a class="opt" href="/?blue=bold&amp;accent=pink">
+        <div class="shot"><img src="/assets/img/palettes/blue-bold.jpg" alt="Bold: a saturated sky blue page with white cards on top" width="1280" height="860" loading="lazy"></div>
+        <h3>Bold</h3>
+        <p>The page itself is saturated sky blue, and the cards turn white so the work pops off it. The most blue, and the most poster-like.</p>
       </a>
     </div>
 
-    <div class="notes">
-      <div><b>How the glass works</b><p>Each glass piece gets its own lens: a curved bezel computed with Snell's law bends the page behind it inward at the edges, with a slight color split, and a bright rim catches light from the top left. Built on kube.io's write-up on liquid glass refraction with CSS and SVG.</p></div>
-      <div><b>Browsers</b><p>Refraction runs in Chrome, Edge and Arc. Safari and Firefox get frosted glass with the same tint and rim. Reduced-motion settings soften the bend.</p></div>
-      <div><b>Readability</b><p>Glass is tinted enough that labels stay readable over any screenshot. On option 1, filled buttons use a deeper pink (#e0006e) so white text passes contrast; hot pink stays on dots and highlights.</p></div>
+    <h2>Accents besides hot pink</h2>
+    <p class="sub">One accent per site: the active tab, live dots, links on hover, section labels and the cursor glow. Shown on Surfaces.</p>
+    <div class="grid g3">
+      <a class="opt" href="/?accent=coral">
+        <div class="shot"><img src="/assets/img/palettes/accent-coral.jpg" alt="Coral accent on the sky blue site" width="860" height="480" loading="lazy"></div>
+        <span class="tag"><b style="background:#ff6a3d"></b>Coral #ff6a3d <span class="rec">Suggested</span></span>
+        <p>Sits almost opposite sky blue on the color wheel, so it's the strongest contrast. Warm, friendly, and still reads as playful like hot pink.</p>
+      </a>
+      <a class="opt" href="/?accent=sun">
+        <div class="shot"><img src="/assets/img/palettes/accent-sun.jpg" alt="Sunflower accent on the sky blue site" width="860" height="480" loading="lazy"></div>
+        <span class="tag"><b style="background:#ffc21a"></b>Sunflower #ffc21a</span>
+        <p>Sky and sun: cheerful and very bright. Buttons use dark text, and yellow text is darkened to stay readable.</p>
+      </a>
+      <a class="opt" href="/?accent=violet">
+        <div class="shot"><img src="/assets/img/palettes/accent-violet.jpg" alt="Violet accent on the sky blue site" width="860" height="480" loading="lazy"></div>
+        <span class="tag"><b style="background:#7c5cff"></b>Violet #7c5cff</span>
+        <p>A neighbor of blue, so it feels calm and techy rather than loud. Close to the AI Visibility Checker's lavender.</p>
+      </a>
+      <a class="opt" href="/?accent=cobalt">
+        <div class="shot"><img src="/assets/img/palettes/accent-cobalt.jpg" alt="Cobalt accent on the sky blue site" width="860" height="480" loading="lazy"></div>
+        <span class="tag"><b style="background:#2563eb"></b>Cobalt #2563eb</span>
+        <p>All blue: a deep cobalt on sky. The most blue overall and the most serious, but the accent stands out least.</p>
+      </a>
+      <a class="opt" href="/?accent=mint">
+        <div class="shot"><img src="/assets/img/palettes/accent-mint.jpg" alt="Mint accent on the sky blue site" width="860" height="480" loading="lazy"></div>
+        <span class="tag"><b style="background:#16c79a"></b>Mint #16c79a</span>
+        <p>Fresh and clean, like a pool. Pairs naturally with the green "live" dots.</p>
+      </a>
+      <a class="opt" href="/?accent=pink">
+        <div class="shot"><img src="/assets/img/palettes/accent-pink.jpg" alt="Hot pink accent on the sky blue site" width="860" height="480" loading="lazy"></div>
+        <span class="tag"><b style="background:#ff2e8a"></b>Hot pink #ff2e8a</span>
+        <p>The original option 1, for comparison. Filled buttons use #e0006e so white text stays readable.</p>
+      </a>
     </div>
+
+    <h2>Three pairings to start with</h2>
+    <div class="pairs">
+      <a class="pair" href="/?blue=surfaces&amp;accent=coral"><h3>Surfaces + coral</h3><p>Blue everywhere, one warm color that says "press here". The most balanced.</p><span class="tag"><b style="background:#93cdf5"></b><b style="background:#ff6a3d"></b>Try it</span></a>
+      <a class="pair" href="/?blue=bold&amp;accent=sun"><h3>Bold + sunflower</h3><p>A bright summer sky. Loud, memorable, and the most blue.</p><span class="tag"><b style="background:#6fbcf0"></b><b style="background:#ffc21a"></b>Try it</span></a>
+      <a class="pair" href="/?blue=wash&amp;accent=violet"><h3>Wash + violet</h3><p>Quiet and calm, closest to today's site, with more blue.</p><span class="tag"><b style="background:#d6ecfc"></b><b style="background:#7c5cff"></b>Try it</span></a>
+    </div>
+
+    <p class="note">Glass: the tab bar, the case-page navigation, build labels, Try it live buttons and the switcher are liquid glass. In Chrome, Edge and Arc they bend the page behind them at the edges; Safari and Firefox show frosted glass. Every accent was checked so button text and accent-colored text meet the 4.5:1 contrast guideline. The live site isn't changed.</p>
   </main>
 </body>
 </html>
