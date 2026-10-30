@@ -24,6 +24,14 @@
   <script>try { var t = localStorage.getItem('ck-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}</script>
   <meta name="theme-color" content="#bfdcf7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0f1a2e" media="(prefers-color-scheme: dark)">
+<!-- trial -->
+  <script>(function(){var r=document.documentElement,q=new URLSearchParams(location.search),s={};try{s=JSON.parse(localStorage.getItem('ck-trial'))||{}}catch(e){}
+  r.dataset.palette='sky';r.dataset.blue=q.get('blue')||s.blue||'wash';r.dataset.accent=q.get('accent')||s.accent||'pink';r.setAttribute('data-theme','light');
+  if(q.get('blue')||q.get('accent')){try{localStorage.setItem('ck-trial',JSON.stringify({blue:r.dataset.blue,accent:r.dataset.accent}))}catch(e){}}})();</script>
+  <link rel="stylesheet" href="/assets/css/palette-glass.css?v=3">
+  <script src="/assets/js/palette-trial.js?v=1" defer></script>
+  <script src="/assets/js/liquid-glass.js?v=2" defer></script>
+  <!-- /trial -->
 </head>
 <body class="v v-stamp case sec-work">
 
