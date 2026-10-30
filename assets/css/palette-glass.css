@@ -1,0 +1,136 @@
+/* ------------------------------------------------------------------
+   Palette trials (test site only): three color combinations, one accent each,
+   with liquid glass on the tabs, pills, buttons and the palette switcher.
+   Loaded after v-stamp.css; :not(#_) lifts specificity over the light/dark theme rules.
+   ------------------------------------------------------------------ */
+
+/* 1 · Sky blue, white, hot pink */
+:root[data-palette="sky"]:not(#_) {
+  --bg: #ffffff;
+  --bg-grad: linear-gradient(180deg, #74bff0 0%, #a9d8f7 18%, #d9eefc 40%, #f4faff 62%, #ffffff 80%);
+  --cloud: rgba(255, 255, 255, .95);
+  --ink: #0e1a2b; --ink-2: #4a5b70;
+  --line: rgba(14, 26, 43, .1); --fill: rgba(14, 26, 43, .06); --fill-2: rgba(14, 26, 43, .04);
+  --pill: #ffffff;
+  --accent: #ff2e8a; --accent-fill: #e0006e; --accent-ink: #c8006a; --accent-tint: rgba(255, 46, 138, .12); --accent-on: #ffffff;
+  --glow: 255, 46, 138; --glow-a: .14;
+  --glass: rgba(255, 255, 255, .5); --glass-line: rgba(255, 255, 255, .95);
+  --lg-tint: rgba(255, 255, 255, .62); --lg-rim: rgba(255, 255, 255, .95); --lg-rim-2: rgba(255, 255, 255, .35);
+  --lg-shadow: 0 10px 30px -10px rgba(20, 60, 110, .35), 0 2px 6px rgba(20, 60, 110, .12);
+  color-scheme: light;
+}
+
+/* 2 · Midnight black, electric blue, cantaloupe orange (accent) */
+:root[data-palette="midnight"]:not(#_) {
+  --bg: #07080c;
+  --bg-grad: radial-gradient(120% 70% at 50% -10%, #1b3fff 0%, #0d1a66 28%, #08091a 58%, #07080c 80%);
+  --cloud: rgba(70, 110, 255, .16);
+  --ink: #f4f6ff; --ink-2: #a3abc4;
+  --line: rgba(255, 255, 255, .1); --fill: rgba(255, 255, 255, .08); --fill-2: rgba(255, 255, 255, .05);
+  --pill: #12141d;
+  --accent: #ffa25f; --accent-ink: #ffb27f; --accent-tint: rgba(255, 162, 95, .16); --accent-on: #1a0d03;
+  --glow: 47, 107, 255; --glow-a: .22;
+  --glass: rgba(255, 255, 255, .06); --glass-line: rgba(255, 255, 255, .16);
+  --lg-tint: rgba(10, 12, 22, .5); --lg-rim: rgba(160, 190, 255, .55); --lg-rim-2: rgba(255, 255, 255, .08);
+  --lg-shadow: 0 12px 34px -10px rgba(0, 0, 0, .7), 0 0 0 1px rgba(47, 107, 255, .18);
+  --g-lucent: linear-gradient(140deg, #141a3d 0%, #0f1530 55%, #0b0e1d 100%);
+  --g-ey: linear-gradient(150deg, #11131c 0%, #171a26 100%);
+  --g-tri: linear-gradient(150deg, #1f150e 0%, #261a10 100%);
+  --g-mirror: linear-gradient(150deg, #1f1a10 0%, #251e12 100%);
+  --g-mobility: linear-gradient(150deg, #0c1a1f 0%, #0f2026 100%);
+  --g-plain: linear-gradient(160deg, #10121a 0%, #161924 100%);
+  color-scheme: dark;
+}
+
+/* 3 · Deep blue, pure white, bubble gum pink (accent) */
+:root[data-palette="deep"]:not(#_) {
+  --bg: #0a1f5c;
+  --bg-grad: linear-gradient(180deg, #0b2a86 0%, #0a2372 35%, #0a1f5c 70%);
+  --cloud: rgba(255, 255, 255, .1);
+  --ink: #ffffff; --ink-2: #bccaee;
+  --line: rgba(255, 255, 255, .16); --fill: rgba(255, 255, 255, .1); --fill-2: rgba(255, 255, 255, .06);
+  --pill: #10297a;
+  --accent: #ff8fcf; --accent-ink: #ffa6da; --accent-tint: rgba(255, 143, 207, .18); --accent-on: #3a0626;
+  --glow: 255, 143, 207; --glow-a: .16;
+  --glass: rgba(255, 255, 255, .1); --glass-line: rgba(255, 255, 255, .3);
+  --lg-tint: rgba(10, 31, 92, .5); --lg-rim: rgba(255, 255, 255, .7); --lg-rim-2: rgba(255, 255, 255, .14);
+  --lg-shadow: 0 12px 34px -10px rgba(2, 8, 40, .65);
+  --g-lucent: linear-gradient(140deg, #1a3696 0%, #13307f 55%, #0f2768 100%);
+  --g-ey: linear-gradient(150deg, #112a74 0%, #163388 100%);
+  --g-tri: linear-gradient(150deg, #1b2f84 0%, #22378f 100%);
+  --g-mirror: linear-gradient(150deg, #192e80 0%, #1e348b 100%);
+  --g-mobility: linear-gradient(150deg, #0f2d78 0%, #133485 100%);
+  --g-plain: linear-gradient(160deg, #102a78 0%, #15318a 100%);
+  color-scheme: dark;
+}
+
+/* ---------- one accent: tabs, section color, links, live dots ---------- */
+:root[data-palette]:not(#_) {
+  --sec-work: var(--accent-ink); --sec-builds: var(--accent-ink); --sec-writing: var(--accent-ink); --sec-about: var(--accent-ink);
+  --n-ink2: var(--ink-2);
+  --n-violet: var(--glass); --n-sky: var(--glass); --n-mint: var(--glass); --n-peach: var(--glass);
+  --n-violet-a: var(--accent-ink); --n-sky-a: var(--accent-ink); --n-mint-a: var(--accent-ink); --n-peach-a: var(--accent-ink);
+  --ok: var(--accent);
+}
+:root[data-palette] .tab[aria-selected="true"]:not(#_) { background: var(--accent-fill, var(--accent)); color: var(--accent-on); }
+:root[data-palette] .tab:hover:not([aria-selected="true"]) { color: var(--ink); background: var(--fill); }
+:root[data-palette] ::selection { background: var(--accent-fill, var(--accent)); color: var(--accent-on); }
+:root[data-palette] :focus-visible { outline-color: var(--accent); }
+:root[data-palette] .live-btn i, :root[data-palette] .live__dot { background: var(--accent); box-shadow: 0 0 0 3px var(--accent-tint); }
+:root[data-palette] main a:not(.w):not(.live-btn):not([class*="notes"]):hover { color: var(--accent-ink); }
+:root[data-palette] .theme-toggle { display: none; }
+:root[data-palette] body::before {
+  background: radial-gradient(42vmax 42vmax at var(--mx, 50%) var(--my, 18%), rgba(var(--glow), var(--glow-a)), transparent 65%);
+}
+:root[data-palette="midnight"] .aurora, :root[data-palette="deep"] .aurora { opacity: 1; }
+:root[data-palette="deep"] .browser { box-shadow: 0 0 0 1px rgba(255, 255, 255, .12), 0 30px 60px -20px rgba(0, 0, 0, .55); }
+
+/* ---------- liquid glass ---------- */
+/* Everywhere: frosted blur, a tint, a bright rim from above and a soft one below. */
+:root[data-palette] .lg:not(#_) {
+  isolation: isolate;
+  background: var(--lg-tint);
+  backdrop-filter: blur(14px) saturate(1.6); -webkit-backdrop-filter: blur(14px) saturate(1.6);
+  box-shadow: var(--lg-shadow), inset 0 1px 0 var(--lg-rim), inset 0 -1px 0 var(--lg-rim-2),
+              inset 1px 0 0 var(--lg-rim-2), inset -1px 0 0 var(--lg-rim-2);
+}
+/* Specular highlight: a thin gradient ring, brightest where the light comes from (top left). */
+.lg::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; padding: 1.2px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, .9), rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0) 62%, rgba(255, 255, 255, .45));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  opacity: .8;
+}
+:root[data-palette="midnight"] .lg::after { opacity: .45; }
+/* Chromium: real refraction through the lens filter, then a lighter frost on top. */
+.lg-on .lg.lg-live:not(#_) { backdrop-filter: var(--lg-filter) blur(2px) saturate(1.7) brightness(1.05); -webkit-backdrop-filter: none; }
+
+/* The tab bar becomes a floating glass capsule that stays in view, so the work scrolls behind it. */
+:root[data-palette] .tabs:not(#_) {
+  position: sticky; top: 14px; z-index: 30; width: fit-content; max-width: 100%;
+  margin-top: 26px; padding: 5px; gap: 2px; border: 0; border-radius: 999px;
+}
+:root[data-palette] .tabs .tab { padding: 8px 18px 7px; }
+:root[data-palette] .tabs + * { margin-top: 10px; }
+:root[data-palette] .stage .pill:not(#_) { border-radius: 999px; }
+:root[data-palette] .live-btn:not(#_) { color: var(--ink); }
+:root[data-palette] .feat__strip .live-btn.lg:not(#_) { position: relative; top: auto; right: auto; }
+:root[data-palette="sky"] .stage .pill:not(#_), :root[data-palette="sky"] .live-btn:not(#_) { color: #0e1a2b; }
+:root[data-palette="midnight"] .stage .pill:not(#_), :root[data-palette="deep"] .stage .pill:not(#_),
+:root[data-palette="midnight"] .live-btn:not(#_), :root[data-palette="deep"] .live-btn:not(#_) { color: #fff; }
+:root[data-palette] .stage .pill em { color: inherit; opacity: .7; }
+
+/* ---------- palette switcher (trial pages only) ---------- */
+.pal-switch {
+  position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 60;
+  display: flex; align-items: center; gap: 4px; padding: 5px; border-radius: 999px; font-size: 13px;
+}
+.pal-switch a { display: inline-flex; align-items: center; gap: 7px; padding: 8px 13px 7px; border-radius: 999px; color: var(--ink); white-space: nowrap; }
+.pal-switch a:hover { background: var(--fill); }
+.pal-switch a[aria-current] { background: var(--accent-fill, var(--accent)); color: var(--accent-on); }
+.pal-switch i { display: inline-flex; }
+.pal-switch i b { width: 10px; height: 10px; border-radius: 50%; margin-left: -3px; box-shadow: 0 0 0 1.5px rgba(255, 255, 255, .8); }
+.pal-switch i b:first-child { margin-left: 0; }
+.pal-switch .pal-back { color: var(--ink); opacity: .75; }
+@media (max-width: 560px) { .pal-switch .pal-name { display: none; } .pal-switch { bottom: 12px; } }

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Palette trials · Chae Kim - Portfolio</title>
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Three color combinations for the portfolio, one accent each, with liquid glass.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+  <style>
+    :root { --ink: #161618; --ink-2: #5d5d63; --line: rgba(0,0,0,.09); --bg: #f6f6f4; }
+    @media (prefers-color-scheme: dark) { :root { --ink: #f5f5f7; --ink-2: #a1a1a6; --line: rgba(255,255,255,.12); --bg: #0d0d0f; } }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.55 Poppins, system-ui, sans-serif; }
+    .wrap { width: min(100% - 32px, 1240px); margin: 0 auto; padding: 56px 0 80px; }
+    h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 600; letter-spacing: -.02em; margin: 0; }
+    .lede { color: var(--ink-2); max-width: 720px; margin: 10px 0 0; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 40px; }
+    @media (max-width: 960px) { .grid { grid-template-columns: 1fr; } }
+    .opt { display: flex; flex-direction: column; gap: 14px; min-width: 0; color: inherit; text-decoration: none; }
+    .shot { border-radius: 18px; overflow: hidden; box-shadow: 0 0 0 1px var(--line), 0 20px 50px -24px rgba(0,0,0,.35); transition: transform .25s cubic-bezier(.32,.72,0,1); }
+    .opt:hover .shot { transform: translateY(-3px); }
+    .shot img { display: block; width: 100%; height: auto; }
+    .sw { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .sw span { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; color: var(--ink-2); }
+    .sw b { width: 18px; height: 18px; border-radius: 50%; box-shadow: 0 0 0 1px var(--line); }
+    .sw .acc { font-weight: 500; color: var(--ink); }
+    h2 { font-size: 20px; font-weight: 600; margin: 0; letter-spacing: -.01em; }
+    .opt p { margin: 0; color: var(--ink-2); font-size: 15px; }
+    .go { font-weight: 500; font-size: 15px; }
+    .notes { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; font-size: 15px; }
+    @media (max-width: 960px) { .notes { grid-template-columns: 1fr; } }
+    .notes b { display: block; margin-bottom: 4px; }
+    .notes p { margin: 0; color: var(--ink-2); }
+    .back { color: var(--ink-2); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <a class="back" href="/">← Current site</a>
+    <h1 style="margin-top:18px">Three palettes, one accent each</h1>
+    <p class="lede">Each option is the real homepage, recolored, with liquid glass on the tab bar, the build labels, the Try it live buttons and the palette switcher. Open one, scroll, and watch the work bend at the edges of the glass as it passes under the tabs.</p>
+
+    <div class="grid">
+      <a class="opt" href="/palettes/sky">
+        <div class="shot"><img src="/assets/img/palettes/sky.jpg" alt="The homepage in sky blue and white with hot pink tabs and glass labels" width="1280" height="860"></div>
+        <div class="sw"><span><b style="background:#74bff0"></b>Sky blue</span><span><b style="background:#fff"></b>White</span><span class="acc"><b style="background:#ff2e8a"></b>Hot pink, accent</span></div>
+        <h2>1 · Sky, white, hot pink</h2>
+        <p>Light and bright. A sky that fades to white, frosted white glass, and hot pink only where you can click: the active tab, live dots, the selection.</p>
+        <span class="go">Open option 1 →</span>
+      </a>
+      <a class="opt" href="/palettes/midnight">
+        <div class="shot"><img src="/assets/img/palettes/midnight.jpg" alt="The homepage in midnight black with an electric blue glow and cantaloupe orange tabs" width="1280" height="860"></div>
+        <div class="sw"><span><b style="background:#07080c"></b>Midnight</span><span><b style="background:#2f6bff"></b>Electric blue</span><span class="acc"><b style="background:#ffa25f"></b>Cantaloupe, accent</span></div>
+        <h2>2 · Midnight, electric blue, cantaloupe</h2>
+        <p>Dark and cinematic. Electric blue is the light source, a glow overhead and on the glass rims, so cantaloupe stays the one color that means "press here".</p>
+        <span class="go">Open option 2 →</span>
+      </a>
+      <a class="opt" href="/palettes/deep">
+        <div class="shot"><img src="/assets/img/palettes/deep.jpg" alt="The homepage in deep blue with white type and bubble gum pink tabs" width="1280" height="860"></div>
+        <div class="sw"><span><b style="background:#0b2a86"></b>Deep blue</span><span><b style="background:#fff"></b>Pure white</span><span class="acc"><b style="background:#ff8fcf"></b>Bubble gum, accent</span></div>
+        <h2>3 · Deep blue, white, bubble gum</h2>
+        <p>Rich and playful. A saturated blue page with pure white type, blue-tinted glass, and bubble gum pink as the accent.</p>
+        <span class="go">Open option 3 →</span>
+      </a>
+    </div>
+
+    <div class="notes">
+      <div><b>How the glass works</b><p>Each glass piece gets its own lens: a curved bezel computed with Snell's law bends the page behind it inward at the edges, with a slight color split, and a bright rim catches light from the top left. Built on kube.io's write-up on liquid glass refraction with CSS and SVG.</p></div>
+      <div><b>Browsers</b><p>Refraction runs in Chrome, Edge and Arc. Safari and Firefox get frosted glass with the same tint and rim. Reduced-motion settings soften the bend.</p></div>
+      <div><b>Readability</b><p>Glass is tinted enough that labels stay readable over any screenshot. On option 1, filled buttons use a deeper pink (#e0006e) so white text passes contrast; hot pink stays on dots and highlights.</p></div>
+    </div>
+  </main>
+</body>
+</html>
