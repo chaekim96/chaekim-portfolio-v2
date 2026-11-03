@@ -1,7 +1,7 @@
 /* ------------------------------------------------------------------
    Palette trial (test site only): sky blue and white across every page,
-   three levels of blue, six accents, and liquid glass on the controls.
-   <html data-palette="sky" data-blue="wash|surfaces|bold" data-accent="...">
+   the wash blue level, a green accent (green = live), and liquid glass on the controls.
+   <html data-palette="sky" data-blue="wash" data-accent="apple|emerald|jade|lime|forest|sage">
    :not(#_) lifts specificity over the light/dark theme rules in v-stamp.css.
    ------------------------------------------------------------------ */
 
@@ -19,53 +19,21 @@
   color-scheme: light;
 }
 
-/* ---------- blue level 1, wash: the sky carries down the whole page ---------- */
+/* ---------- blue level: wash, the sky carries down the whole page ---------- */
 :root[data-palette="sky"][data-blue="wash"]:not(#_) {
   --bg: #eef7fe;
   --bg-grad: linear-gradient(180deg, #74bff0 0%, #a8d7f7 260px, #d6ecfc 640px, #eef7fe 1100px);
 }
 
-/* ---------- blue level 2, surfaces: blue page, blue-tinted cards and panels ---------- */
-:root[data-palette="sky"][data-blue="surfaces"]:not(#_) {
-  --bg: #dcefff;
-  --bg-grad: linear-gradient(180deg, #5fb3ee 0%, #93cdf5 300px, #c4e3fb 700px, #dcefff 1100px);
-  --g-lucent: linear-gradient(150deg, #e9f4ff 0%, #d2e8fd 100%);
-  --g-ey: linear-gradient(150deg, #eaf3fc 0%, #d6e7f8 100%);
-  --g-tri: linear-gradient(150deg, #edf6ff 0%, #d9ebfd 100%);
-  --g-mirror: linear-gradient(150deg, #eff7ff 0%, #dbedfd 100%);
-  --g-mobility: linear-gradient(150deg, #e7f5fd 0%, #cfe9fa 100%);
-  --g-plain: linear-gradient(150deg, #ecf5fe 0%, #d7e9fb 100%);
-  --n-violet: linear-gradient(150deg, #e9f4ff 0%, #d6eafd 100%); --n-sky: var(--n-violet); --n-mint: var(--n-violet); --n-peach: var(--n-violet);
-}
-
-/* ---------- blue level 3, bold: a saturated sky everywhere, white cards on top ---------- */
-:root[data-palette="sky"][data-blue="bold"]:not(#_) {
-  --bg: #8fccf4;
-  --bg-grad: linear-gradient(180deg, #4aa8ea 0%, #6fbcf0 340px, #8fccf4 800px);
-  --ink: #08182b; --ink-2: #1f3a57;
-  --line: rgba(8, 40, 80, .16); --fill: rgba(255, 255, 255, .3); --fill-2: rgba(255, 255, 255, .2);
-  --cloud: rgba(255, 255, 255, .7);
-  --g-lucent: linear-gradient(150deg, #ffffff 0%, #eef7ff 100%);
-  --g-ey: var(--g-lucent); --g-tri: var(--g-lucent); --g-mirror: var(--g-lucent); --g-mobility: var(--g-lucent); --g-plain: var(--g-lucent);
-  --n-violet: rgba(255, 255, 255, .72); --n-sky: var(--n-violet); --n-mint: var(--n-violet); --n-peach: var(--n-violet);
-  --lg-tint: rgba(255, 255, 255, .55);
-}
-:root[data-blue="bold"] .stage:not(.case-cover) { box-shadow: 0 20px 50px -28px rgba(8, 40, 80, .45); }
-
 /* ---------- accents: --accent is the color, --accent-fill carries text (AA), --accent-ink is accent-colored text ---------- */
-:root[data-accent="pink"]:not(#_)   { --accent: #ff2e8a; --accent-fill: #e0006e; --accent-on: #ffffff; --accent-ink: #c8006a; --glow: 255, 46, 138; }
-:root[data-accent="coral"]:not(#_)  { --accent: #ff6a3d; --accent-fill: #ff6a3d; --accent-on: #1a0b04; --accent-ink: #b8400f; --glow: 255, 106, 61; }
-:root[data-accent="sun"]:not(#_)    { --accent: #ffc21a; --accent-fill: #ffc21a; --accent-on: #1a1400; --accent-ink: #7f5a00; --glow: 255, 194, 26; }
-:root[data-accent="violet"]:not(#_) { --accent: #7c5cff; --accent-fill: #6a45ff; --accent-on: #ffffff; --accent-ink: #5435e0; --glow: 124, 92, 255; }
-:root[data-accent="cobalt"]:not(#_) { --accent: #2563eb; --accent-fill: #1d4ed8; --accent-on: #ffffff; --accent-ink: #1747c4; --glow: 37, 99, 235; }
-:root[data-accent="mint"]:not(#_)   { --accent: #16c79a; --accent-fill: #16c79a; --accent-on: #04241a; --accent-ink: #0a7a5b; --glow: 22, 199, 154; }
-/* On the bold sky, accent-colored text needs to be darker still */
-:root[data-blue="bold"][data-accent="sun"]:not(#_)    { --accent-ink: #5e4200; }
-:root[data-blue="bold"][data-accent="mint"]:not(#_)   { --accent-ink: #05573f; }
-:root[data-blue="bold"][data-accent="coral"]:not(#_)  { --accent-ink: #8f2f08; }
-:root[data-blue="bold"][data-accent="pink"]:not(#_)   { --accent-ink: #a00055; }
-:root[data-blue="bold"][data-accent="violet"]:not(#_) { --accent-ink: #3d22b8; }
-:root[data-blue="bold"][data-accent="cobalt"]:not(#_) { --accent-ink: #0f327f; }
+/* Greens. Raw --accent stays vivid (dots, glow). Fill/on and ink are checked for 4.5:1:
+   fill text, and ink on both #ffffff and #eef7fe. */
+:root[data-accent="apple"]:not(#_)   { --accent: #30d158; --accent-fill: #30d158; --accent-on: #04210f; --accent-ink: #10702a; --glow: 48, 209, 88; }
+:root[data-accent="emerald"]:not(#_) { --accent: #10b981; --accent-fill: #10b981; --accent-on: #032a1d; --accent-ink: #04704f; --glow: 16, 185, 129; }
+:root[data-accent="jade"]:not(#_)    { --accent: #0fa37f; --accent-fill: #0b7d61; --accent-on: #ffffff; --accent-ink: #0a7059; --glow: 15, 163, 127; }
+:root[data-accent="lime"]:not(#_)    { --accent: #9be22d; --accent-fill: #9be22d; --accent-on: #1a2a00; --accent-ink: #436f0b; --glow: 155, 226, 45; }
+:root[data-accent="forest"]:not(#_)  { --accent: #15803d; --accent-fill: #15803d; --accent-on: #ffffff; --accent-ink: #126f35; --glow: 21, 128, 61; }
+:root[data-accent="sage"]:not(#_)    { --accent: #8fb996; --accent-fill: #8fb996; --accent-on: #0f2a17; --accent-ink: #3f6b4b; --glow: 143, 185, 150; }
 
 /* ---------- one accent, everywhere ---------- */
 :root[data-palette="sky"]:not(#_) {
@@ -86,6 +54,16 @@
 :root[data-palette] body::before {
   background: radial-gradient(42vmax 42vmax at var(--mx, 50%) var(--my, 18%), rgba(var(--glow), var(--glow-a)), transparent 65%);
 }
+
+/* Green means live: a soft ring on the live dots, about 2s. Only these two. */
+@media (prefers-reduced-motion: no-preference) {
+  :root[data-palette] .live-btn i, :root[data-palette] .status i { animation: live-ring 2s ease-out infinite; }
+  @keyframes live-ring {
+    0% { box-shadow: 0 0 0 0 rgba(var(--glow), .55); }
+    70%, 100% { box-shadow: 0 0 0 7px rgba(var(--glow), 0); }
+  }
+}
+:root[data-palette] .status i { background: var(--accent); }
 
 /* ---------- liquid glass ---------- */
 :root[data-palette] .lg:not(#_) {
@@ -126,10 +104,6 @@
   display: flex; align-items: center; gap: 6px; padding: 6px; border-radius: 999px; font: 500 13px/1 Poppins, system-ui, sans-serif;
   max-width: calc(100vw - 24px);
 }
-.pal-seg { display: flex; gap: 2px; }
-.pal-seg button { font: inherit; padding: 8px 12px 7px; border-radius: 999px; color: var(--ink); white-space: nowrap; }
-.pal-seg button:hover { background: var(--fill); }
-.pal-seg button[aria-pressed="true"] { background: var(--ink); color: #fff; }
 .pal-sep { width: 1px; height: 22px; background: var(--line); flex: none; }
 .pal-dots { display: flex; gap: 6px; padding: 0 4px; }
 .pal-dots button { width: 22px; height: 22px; border-radius: 50%; box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .85), 0 0 0 1px rgba(8, 40, 80, .18); }
